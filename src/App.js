@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route, Switch } from "react-router-dom";
+import List_All from "./Tab.js";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme";
+// function NoPage() {
+//   return (
+//     <div>
+//       <NavBar />
+//       123
+//     </div>
+//   );
+// }
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <ThemeProvider theme={theme}>
+        <Switch>
+          <Route exact path="/" component={List_All} />
+          {/* <Route exact path="/List_All" component={List_All} />
+        <Route exact path="/EmployeeList" component={EmployeeList} /> */}
+          {/* <Route component={NoPage} /> */}
+        </Switch>
+      </ThemeProvider>
+    </HashRouter>
   );
 }
-
-export default App;
