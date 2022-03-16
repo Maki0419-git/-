@@ -1,5 +1,5 @@
 import { HashRouter, Route, Switch } from "react-router-dom";
-import List_All from "./Tab.js";
+import AllList from "./AllList.js";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 // function NoPage() {
@@ -16,7 +16,7 @@ export default function App() {
     <HashRouter>
       <ThemeProvider theme={theme}>
         <Switch>
-          <Route exact path="/" component={List_All} />
+          <Route exact path="/" component={AllList} />
           {/* <Route exact path="/List_All" component={List_All} />
         <Route exact path="/EmployeeList" component={EmployeeList} /> */}
           {/* <Route component={NoPage} /> */}
