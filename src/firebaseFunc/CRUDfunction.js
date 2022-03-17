@@ -1,5 +1,5 @@
 import { db, getDocs, collection, } from "../config";
-import { doc, updateDoc, onSnapshot, addDoc } from "firebase/firestore";
+import { doc, updateDoc, onSnapshot, addDoc, deleteDoc } from "firebase/firestore";
 
 export const getListData = (type, primary, secondary, setItem) => new Promise(async (resolve, reject) => {
     try {
@@ -37,4 +37,19 @@ export const updateListData = ({ id, type, data, action }) => new Promise(async 
     }
 })
 
+
+export const deleteListData = (type, data) => new Promise(async (resolve, reject) => {
+
+    try {
+        let promiseArray = [];
+        data.forEach(id => {
+            promiseArray.push(deleteDoc(doc(db, type, id)));
+        })
+        await Promise.all(promiseArray);
+        resolve();
+    } catch (e) {
+        reject(e.message)
+    }
+
+})
 

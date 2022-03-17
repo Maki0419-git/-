@@ -20,7 +20,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3, height: '88vh' }}>
+        <Box sx={{ p: 3, height: '87vh', position: "relative" }}>
           {children}
         </Box>
       )}
@@ -65,8 +65,8 @@ export default function AllList() {
           aria-label="full width tabs example"
           sx={{ margin: 0 }}
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="product" {...a11yProps(0)} />
+          <Tab label="employee" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
