@@ -1,7 +1,7 @@
 # React CRUD with Firebase
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Mainly for the practice of adding, modifying, deleting and updating data with Firebase API.
+Mainly for the practice of adding, modifying, deleting and updating data with Firebase API, and is styling with MUI.
 
 ## Available Scripts
 
